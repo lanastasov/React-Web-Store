@@ -7,14 +7,17 @@ class StorePicker extends React.Component {
     //     super();
     //     this.goToStore = this.goToStore.bind(this);
     // }
+    myInput = React.createRef();
+    static propTypes = {
+        history: PropTypes.object
+    };
     goToStore(event) {
         event.preventDefault();
         console.log('You changed the url');
         // first grab the text from the box
-        const storeId = this.storeInput.value;
-        console.log(`Going to ${storeId}`);
+        const storeName = this.myInput.current.value;
         // second we are going to transition from / to /store/:storeId
-        this.context.router.transitionTo(`/store/${storeId}`);
+        this.props.history.push(`/store/${storeName}`);
         
     }
     render() {
@@ -23,18 +26,12 @@ class StorePicker extends React.Component {
                 <h2>Please Enter A Store</h2>
                 <input type="text" required placeholder="Store Name"
                         defaultValue={getFunName()}
-                        ref={(input)=>{this.storeInput = input}} />
+                        ref={this.myInput} />
                 <button type="submit">Visit Store -&gt;</button>
             </form>
 
         )
     }
 }
-
-StorePicker.contextTypes = {
-    router: React.PropTypes.object
-}
-
-
 
 export default StorePicker;
