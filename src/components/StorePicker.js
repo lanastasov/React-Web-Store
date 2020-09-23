@@ -1,5 +1,6 @@
 import React from 'react';
 import { getFunName } from '../helpers.js';
+import PropTypes from 'prop-types';
 
 class StorePicker extends React.Component {
     // constructor() {
@@ -10,8 +11,10 @@ class StorePicker extends React.Component {
         event.preventDefault();
         console.log('You changed the url');
         // first grab the text from the box
-        console.log(this.storeInput.value);
+        const storeId = this.storeInput.value;
+        console.log(`Going to ${storeId}`);
         // second we are going to transition from / to /store/:storeId
+        this.context.router.transitionTo(`/store/${storeId}`);
         
     }
     render() {
@@ -27,5 +30,11 @@ class StorePicker extends React.Component {
         )
     }
 }
+
+StorePicker.contextTypes = {
+    router: React.PropTypes.object
+}
+
+
 
 export default StorePicker;
