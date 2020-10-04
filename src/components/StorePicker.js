@@ -1,6 +1,6 @@
 import React from 'react';
-import { getFunName } from '../helpers.js';
 import PropTypes from 'prop-types';
+import { getFunName } from '../helpers.js';
 
 class StorePicker extends React.Component {
     // constructor() {
