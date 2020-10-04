@@ -513,6 +513,21 @@ ul.order li span.count span {
   width: 150px;
   margin-right: 1rem;
 }
+button.twitter.disabled,
+button.github.disabled {
+  color: #d12028;
+  background: #fff;
+  border-color: #d12028;
+}
+button.twitter.disabled:hover,
+button.github.disabled:hover {
+  color: #d12028;
+  cursor: not-allowed;
+}
+button.twitter.disabled:after,
+button.github.disabled:after {
+  display: none;
+}
 button,
 input[type=submit] {
   text-transform: uppercase;
@@ -520,7 +535,7 @@ input[type=submit] {
   border: 1px solid #000;
   font-weight: 600;
   font-size: 1.5rem;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   position: relative;

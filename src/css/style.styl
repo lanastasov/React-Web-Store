@@ -215,6 +215,16 @@ ul.order
     width 150px
     margin-right 1rem
 
+button.twitter.disabled, button.github.disabled
+  color red
+  background white
+  border-color red
+  &:hover
+    color red
+    cursor not-allowed
+  &:after
+    display none
+
 button, input[type=submit]
   text-transform uppercase
   background none
