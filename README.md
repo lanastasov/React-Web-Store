@@ -12,3 +12,4 @@
 - Taking advantage of new ES6 Features
 - Deploying React Applications
 
+![react-web-store-screenshot](https://user-images.githubusercontent.com/385682/149757925-9d42a35a-c898-4992-adfc-bc2b8f338b60.jpg)
